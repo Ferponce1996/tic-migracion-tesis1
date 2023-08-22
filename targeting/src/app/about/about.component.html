@@ -1,0 +1,28 @@
+
+<div>
+    <br>
+    <br>
+    
+    <mat-checkbox  [(ngModel)]="isDisabled" fisStyle="">Disable Button Toggle Items</mat-checkbox>
+    
+    
+    <br>
+    <br>
+    
+    isDisabled {{isDisabled}}
+    <br>
+    <br>
+    
+    
+    <mat-button-toggle-group #group="matButtonToggleGroup" [disabled]="isDisabled">
+        <mat-button-toggle [disabled]="isDisabled" (change)="onValChange($event.value)"  value="1" aria-label="Text align left">
+          <mat-icon class="green-icon">fiber_manual_record</mat-icon>
+        </mat-button-toggle> 
+        <mat-button-toggle value="2" (change)="onValChange($event.value)" aria-label="Text align center">
+          <mat-icon class="yellow-icon">fiber_manual_record</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="3" (change)="onValChange($event.value)" aria-label="Text align right">
+          <mat-icon class="red-icon">fiber_manual_record</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+  </div>

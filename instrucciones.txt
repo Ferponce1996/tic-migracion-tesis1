@@ -1,0 +1,35 @@
+dentro del directorio backend ejecutar el DockerFile:
+
+
+docker-compose up
+
+
+El que dice targeting hace referencia al front.
+
+
+-----------si se creo mal un contenedor elimar con:
+
+docker-compose down
+docker-compose rm -f
+docker rmi targeting-app_backend
+
+
+---------cuando no se elimina un contenedor
+Para resolver esto, primero debes detener y eliminar el contenedor que está utilizando la imagen. Puedes hacerlo con los siguientes comandos:
+
+Detén el contenedor:
+
+$docker stop 99644f4e2ee6
+
+Elimina el contenedor:
+
+$docker rm 99644f4e2ee6
+
+Una vez que hayas eliminado el contenedor, podrás eliminar la imagen con el siguiente comando:
+
+
+$docker rmi backend-backend
+
+Después de eliminar la imagen, puedes intentar nuevamente el comando 
+
+$docker-compose up -d para construir y levantar los servicios Docker con las correcciones en el Dockerfile.

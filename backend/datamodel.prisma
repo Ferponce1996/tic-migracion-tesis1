@@ -1,0 +1,57 @@
+type User {
+  id: ID! @id
+  name: String!
+}
+
+type Actor {
+id: Int! @id (strategy: SEQUENCE) @sequence(name: "Actor_SEQUENCE" initialValue:1 allocationSize:100)
+createdAt: DateTime! @createdAt
+updatedAt: DateTime! @updatedAt
+name: String!
+prioridad: Int
+coments: String
+parent: Boolean
+hijos: [Actor] @relation (onDelete: CASCADE)
+celdas: [Celda] @relation(name: "ActorCelda", onDelete: CASCADE)
+}
+
+type Tema {
+id: Int! @id(strategy: SEQUENCE) @sequence(name: "Tema_SEQUENCE" initialValue:1 allocationSize:100)
+createdAt: DateTime! @createdAt
+updatedAt: DateTime! @updatedAt
+name: String!
+prioridad: Int
+coments: String
+parent: Boolean
+hijos: [Tema] @relation(name: "HijosTema", onDelete: CASCADE)
+celdas: [Celda] @relation(name: "TemaCelda", onDelete: CASCADE)
+}
+
+
+type Celda {
+  id: ID! @id
+  TemaParent: Tema!  @relation(name: "TemaCelda")
+  ActorParent: Actor! @relation(name: "ActorCelda")
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  prioridad: Int
+  tiempo: Int
+  coment: String
+  matriz: Matriz! @relation(name: "MatrizCelda")
+}
+
+type Estado {
+  id: ID! @id
+  NumActor : Int!
+  NumTemas : Int!
+}
+
+type Matriz{
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  User: User
+  Actores: [Actor] 
+  Temas: [Tema]
+  Celdas: [Celda] @relation(name: "MatrizCelda", onDelete: CASCADE)
+}

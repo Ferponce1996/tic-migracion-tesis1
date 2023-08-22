@@ -1,0 +1,9 @@
+ls
+dir
+cd targeting
+nvm use v14
+npm i
+cls
+ng s
+y
+doskey /HISTORY > history.txt
