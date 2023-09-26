@@ -77,6 +77,7 @@ export class ActorComponent implements OnInit {
   }
  
   ngOnInit(): void {
+    // Este es mi comentario
   }
 
 }
