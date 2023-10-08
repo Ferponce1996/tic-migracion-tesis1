@@ -1,5 +1,8 @@
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MatSidenavModule } from "@angular/material/sidenav";
+
+///componentes 
 import { HomeComponent } from "./home/home.component";
 import { AboutComponent } from "./about/about.component";
 import { ActorComponent } from './actor/actor.component';
@@ -9,11 +12,12 @@ import {LinkListComponent} from './link-list/link-list.component';
 import {CreateLinkComponent} from './create-link/create-link.component';
 import { MatrizComponent } from "./matriz/matriz.component";
 import { LoginComponent } from "./login/login.component";
-import { AuthGuard } from './auth/auth.guard';
 import {MatrizesComponent} from './matrizes/matrizes.component';
 import { RegisterComponent } from "./register/register.component";
 
-import { MatSidenavModule } from "@angular/material/sidenav";
+//auth
+import { AuthGuard } from './auth/auth.guard';
+
 
 
 const routes: Routes = [

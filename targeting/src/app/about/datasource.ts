@@ -1,4 +1,6 @@
-export let sampleData: Object[] = [
+import { Task } from "../models/task.model";
+
+export let sampleData: Task[] = [
 
     {
         taskId: 1,
